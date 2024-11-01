@@ -1,0 +1,88 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: 18px;
+  line-height: 21px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.main-parent {
+  order: 1;
+}
+
+.main,
+.aside {
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 100vh;
+  overflow: auto;
+}
+
+.main {
+  font-size: 40px;
+  background-color: rgb(152, 152, 105);
+}
+
+.code-examples {
+  margin-top: 20px;
+}
+
+code {
+  color: #0d1c33;
+}
+
+.aside-btn img {
+  width: 50px;
+}
+
+.aside-btn {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: hsl(240, 90%, 27%);
+  cursor: pointer;
+  display: none;
+}
+
+.aside {
+  padding: 14px 8px;
+  display: flex;
+  justify-content: center;
+  background-color: hsl(240, 20%, 66%);
+}
+
+.menu {
+  list-style: none;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.item {
+  margin-bottom: 18px;
+  margin-right: 18px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: hsl(60, 33%, 53%);
+  padding: 10px 20px;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
