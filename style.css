@@ -31,6 +31,8 @@ body {
   border-radius: 4px;
   height: 100vh;
   overflow: auto;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .main {
@@ -97,21 +99,37 @@ code {
     position: relative;
   }
 
+  .aside-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
   .aside {
-    width: 100vw;
     position: absolute;
-    width: 96.8%;
+    width: 100%;
     opacity: 0;
-    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+    transform: translate(0px, -100%) rotateX(45deg);
     transition: all 0.8s ease 0s; 
   }
 
   .aside--show {
     opacity: 1;
-    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+    transform: translate(0px, 0%) rotateX(0deg);
   }
 
   .code-examples {
     margin-left: -70px;
+  }
+}
+
+
+@media screen and (max-width: 380px) {
+  .main {
+    font-size: 20px;
+  }
+
+  .code-examples {
+    margin-left: -20px;
   }
 }
