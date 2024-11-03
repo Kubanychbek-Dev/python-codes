@@ -18,8 +18,13 @@ function screenCode() {
   
     li.addEventListener("click", () => {
       document.querySelector("code").innerHTML = code.codeSelf
+      document.querySelector(".aside--show").classList.remove("aside--show")
     })
   })
 }
 
 screenCode();
+
+document.querySelector(".aside-btn").addEventListener("click", () => {
+  document.querySelector(".aside").classList.toggle("aside--show");
+})
