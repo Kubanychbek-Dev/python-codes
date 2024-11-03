@@ -87,3 +87,31 @@ code {
 .item:last-child {
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 767px) {
+  .aside-btn {
+    display: block;
+  }
+
+  .aside-parent {
+    position: relative;
+  }
+
+  .aside {
+    width: 100vw;
+    position: absolute;
+    width: 96.8%;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+    transition: all 0.8s ease 0s; 
+  }
+
+  .aside--show {
+    opacity: 1;
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+  }
+
+  .code-examples {
+    margin-left: -70px;
+  }
+}
