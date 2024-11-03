@@ -118,18 +118,22 @@ code {
     transform: translate(0px, 0%) rotateX(0deg);
   }
 
+  .main {
+    font-size: 18px;
+  }
+
   .code-examples {
-    margin-left: -70px;
+    margin-left: -10px;
   }
 }
 
 
 @media screen and (max-width: 380px) {
   .main {
-    font-size: 8px;
+    font-size: 18px;
   }
 
   .code-examples {
-    margin-left: -20px;
+    margin-left: -10px;
   }
 }
