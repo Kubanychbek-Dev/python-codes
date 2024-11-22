@@ -27,5 +27,18 @@ export const codeLists = [
    updated_cinema_genres = cinema_genres[:1] + ("Боевик",) + ("Фэнтези",) + cinema_genres[2:]
     print(updated_cinema_genres)
     # ('Комедия', 'Боевик', 'Фэнтези', 'Пеплум', 'Триллер')`
+  },
+  {
+    codeName: "Write data to txt file",
+    codeSelf: `
+    def write_data(data):
+        get_data = data.split(",")
+        with open(path_to_test_file_1, "w", encoding="utf-8") as file:
+             for text in get_data:
+                 file.write(f"{text}\n")
+        print("Данные записаны")
+    
+     my_text = "Если б мишки были пчелами,То они бы нипочем,Никогда и не подумали,Так высоко строить дом."
+     write_data(my_text)`
   }
  ]
