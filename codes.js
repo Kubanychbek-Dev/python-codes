@@ -53,5 +53,33 @@ export const codeLists = [
             
      read_data()
      `
+  },
+  {
+    codeName: "Create and delete directory",
+    codeSelf: `
+    """Написать код для создания и для удаления папки внутри
+       папки data_path_2"""
+       base_dir = "."
+data_path_2_dir = r"data_path_2"
+new_dir = r"new_dir"
+
+add_new_dir = os.path.join(base_dir, data_path_2_dir, new_dir)
+
+if os.path.exists(add_new_dir) is False:
+    os.mkdir(add_new_dir)
+    print(f"The directory '{new_dir}' created")
+else:
+    print("That directory already exists")
+    print(add_new_dir)
+print()
+
+"""удаления папки внутри
+папки data_path_2"""
+if os.path.exists(add_new_dir) is True:
+    os.rmdir(add_new_dir)
+    print(f"That directory '{new_dir}' deleted")
+else:
+    print("That directory doesn't exist")
+    `
   }
  ]
