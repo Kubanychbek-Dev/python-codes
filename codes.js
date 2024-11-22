@@ -39,6 +39,19 @@ export const codeLists = [
         print("Данные записаны")
     
      my_text = "Если б мишки были пчелами,То они бы нипочем,Никогда и не подумали,Так высоко строить дом."
-     write_data(my_text)`
+     write_data(my_text)
+     `
+  },
+  {
+    codeName: "Read data from txt file",
+    codeSelf: `
+    def read_data():
+        with open(path_to_test_file_1, "r", encoding="utf-8") as file:
+             content = file.readlines()
+             for text in content:
+                 print(text.rstrip())
+            
+     read_data()
+     `
   }
  ]
