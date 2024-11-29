@@ -81,5 +81,14 @@ if os.path.exists(add_new_dir) is True:
 else:
     print("That directory doesn't exist")
     `
+  },
+  {
+    codeName: "Craete dictionary from two lists",
+    codeSelf: `
+              anim1 = ["cat", "dog", "bird", "lizard"]
+              anim2 = ["кот", "собака", "птица", "ящерица"]
+
+              m = dict(zip(anim1, anim2))
+  `
   }
  ]
