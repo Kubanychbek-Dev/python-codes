@@ -90,5 +90,21 @@ else:
 
               m = dict(zip(anim1, anim2))
   `
+  },
+  {
+    codeName: "Save dict to JSON file",
+    codeSelf: `
+    my_dict = {
+    "key": "value"
+}
+
+with open("test.json", encoding="utf-8") as file:
+    data = json.load(file)
+
+
+with open("test.json", "w", encoding="utf-8") as file_2:
+    data.append(my_dict)
+    json.dump(data, file_2, indent=4)
+    `
   }
  ]
