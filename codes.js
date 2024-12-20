@@ -450,7 +450,51 @@ print()
 print(computer2.save_data())
 print()
 print(computer2.display_image())
+    `
+  },
+  {
+    codeName: "Создание стека с помощью списка",
+    codeSelf: `
+        class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
+
+class Stack:
+    def __init__(self):
+        self.top = None
+
+    def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+
+    def pop(self):
+        if not self.is_empty():
+            popped = self.top
+            self.top = self.top.next
+            popped.next = None
+            return popped.data
+        else:
+            return "Stack is empty"
+
+    def peek(self):
+        if not self.is_empty():
+            return self.top.data
+        else:
+            return "Stack is empty"
+
+    def is_empty(self):
+        return self.top is None
+
+    def size(self):
+        count = 0
+        current = self.top
+        while current:
+            count += 1
+            current = current.next
+        return count
     `
   }
  ]
