@@ -591,5 +591,76 @@ class Stack:
 # stack.push(3)
 # stack.push(3.88)
     `
+  },
+  {
+    codeName: "Creating simple Queue using nodes",
+    codeSelf: `
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next_node = None
+
+
+class Queue:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def enqueue(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            self.tail.next_node = new_node
+        self.tail = new_node
+
+    def dequeue(self):
+        if self.head is None:
+            return "Queue is empty"
+        else:
+            popped = self.head
+            self.head = self.head.next_node
+        return popped.data
+
+    def size(self):
+        count = 0
+        while self.head:
+            count += 1
+            self.head = self.head.next_node
+        return count
+
+    def peek_first(self):
+        if self.head is None:
+            return "Queue is empty"
+        else:
+            return self.head.data
+
+    def peek_middle(self):
+        if self.head is None:
+            return "Queue is empty"
+        else:
+            return self.head.next_node.data
+
+    def peek_last(self):
+        if self.head is None:
+            return "Queue is empty"
+        else:
+            return self.tail.data
+
+
+q = Queue()
+q.enqueue(1)
+q.enqueue("Hello")
+q.enqueue(3)
+q.enqueue(4)
+q.enqueue(5)
+print(q.peek_first())
+print()
+print(q.peek_middle())
+print()
+print(q.peek_last())
+print()
+print(q.size())
+    `
   }
  ]
