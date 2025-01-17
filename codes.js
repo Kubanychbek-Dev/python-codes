@@ -922,5 +922,24 @@ if __name__ == '__main__':
     plane_obj = JSONDataAdapter.from_json(plane_json)
     plane_obj.print_airplane_props()
     `
+  },
+  {
+    codeName: "Clear Stack",
+    codeSelf: `
+                                                              def pop(self):
+        """Функция для удаления верхнего элемента из стека"""
+        if self.top:
+            remove_last = self.top
+            self.top = self.top.next_node
+            return remove_last.data
+        else:
+            return "Стэк пуст"
+
+                                                            def clear_stack(self):
+        """Очистка стека"""
+        while self.top:
+              self.pop()
+        return self.pop()
+    `
   }
  ]
