@@ -941,5 +941,30 @@ if __name__ == '__main__':
               self.pop()
         return self.pop()
     `
+  },
+  {
+    codeName: "Clear Queue",
+    codeSelf: `
+                     def clear_queue(self):
+        """Очистка очереди"""
+        current = self.head
+        while current:
+            nxt = current.next_node
+            self.head = None
+            current = nxt
+    `
+  },
+  {
+    codeName: "Clear single linked list",
+    codeSelf: `
+                     def clear_all(self):
+        """Делает очистку всего списка"""
+        current = self.head
+        while current:# Добавил этот метод, чтобы легче было тестировать
+            next_n = current.next_node
+            self.head = None
+            current = next_n
+        return "список очищен"
+    `
   }
  ]
