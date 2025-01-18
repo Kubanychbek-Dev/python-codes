@@ -966,5 +966,42 @@ if __name__ == '__main__':
             current = next_n
         return "список очищен"
     `
+  },
+  {
+    codeName: "code который рассчитывает финальную сумму заказа, учитывая размер налога.",
+    codeSelf: `
+                                                                         def get_order_total_sum(order_total, country):
+    total = 0
+    for items_price_quant in order_total.values():
+        total += items_price_quant[0] * items_price_quant[1]
+        print(items_price_quant)
+        print(total)
+    print(total)
+
+    if get_tax_amount(country):
+        print(get_tax_amount(country))
+        total += total * get_tax_amount(country)
+        print(total)
+        return total
+    else:
+        return "Wrong country code"
+
+
+def get_tax_amount(country):
+    if country == "RU":
+        return 0.2
+    elif country == "KZ":
+        return 0.12
+    elif country == "UAE":
+        return 0.05
+
+order = {
+    "Shevrolet": [100, 10],
+    "Tesla": [250, 4],
+    "BMW": [20, 50]
+}
+
+print(get_order_total_sum(order, "KZ")) # --> 3360.0
+    `
   }
  ]
