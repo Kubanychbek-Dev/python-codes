@@ -1005,7 +1005,7 @@ print(get_order_total_sum(order, "KZ")) # --> 3360.0
     `
   },
   {
-    codeName: "Handler (Pattern project)":
+    codeName: "Handler (Pattern project)",
     codeSelf:
     `
                                  from abc import ABC, abstractmethod
@@ -1068,10 +1068,77 @@ if __name__ == "__main__":
     chain.handle_request(requests)
     `
   },
-    {
+  {
       codeName: "Simple client and server (socket)",
       codeSelf: `
                                       https://github.com/Kubanychbek-Dev/home_work_16_02_25_socket
       `
-    }
+    },
+    {
+      codeName: "Command (Pattern)",
+      codeSelf: `
+                                               https://github.com/Kubanychbek-Dev/home_work_29_01_25
+      `
+    },
+    {
+      codeName: "get_prime_numbers",
+      codeSelf: `
+                                                                           def get_prime_numbers():
+    """Первый поток находит все простые числа"""
+    nums_list = []
+    with open(ask_for_filename, "r", encoding="utf-8")as f:
+        data = f.read().split("\n")
+
+    for num in data:
+        if num != '':
+            nums_list.append(int(num))
+
+    prime_nums = []
+
+    for i in nums_list:
+        c = 0
+        for j in range(1, i):
+            if i % j == 0:
+                c = c + 1
+        if c == 1:
+            prime_nums.append(i)
+
+    prime_file = "prime-numbers.txt"
+    with open(prime_file, "w", encoding="utf-8")as f:
+        for num in prime_nums:
+            f.write(f"{num}\n")
+
+    time.sleep(1)
+    print(f"Простые числа найдены и записаны в {prime_file}")
+      `
+    },
+  {
+    codeName: "get_factorial_of_each_number",
+    codeSelf: `
+                                                          def get_factorial_of_each_number():
+    """второй поток находит факториал каждого числа"""
+    nums_list = []
+    with open(ask_for_filename, "r", encoding="utf-8") as f:
+        data = f.read().split("\n")
+
+    for num in data:
+        if num != '':
+            nums_list.append(int(num))
+
+    nums = []
+    for i in nums_list:
+        f = 1
+        for j in range(1, i + 1):
+            f *= j
+        nums.append(f)
+
+    factorials_file = "factorial.txt"
+    with open(factorials_file, "w", encoding="utf-8")as f:
+        for i in nums:
+            f.write(f"{i}\n")
+
+    time.sleep(2)
+    print(f"Факториал каждого числа записывается в {factorials_file}")
+    `
+  }
  ]
