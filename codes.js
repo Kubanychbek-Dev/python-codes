@@ -1067,5 +1067,11 @@ if __name__ == "__main__":
     requests = ["Code", "list", "Build"]
     chain.handle_request(requests)
     `
-  }
+  },
+    {
+      codeName: "Simple client and server (socket)",
+      codeSelf: `
+                                      https://github.com/Kubanychbek-Dev/home_work_16_02_25_socket
+      `
+    }
  ]
