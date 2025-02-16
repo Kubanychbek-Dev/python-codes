@@ -1073,14 +1073,14 @@ if __name__ == "__main__":
       codeSelf: `
                                       https://github.com/Kubanychbek-Dev/home_work_16_02_25_socket
       `
-    },
-    {
+  },
+  {
       codeName: "Command (Pattern)",
       codeSelf: `
                                                https://github.com/Kubanychbek-Dev/home_work_29_01_25
       `
-    },
-    {
+  },
+  {
       codeName: "get_prime_numbers",
       codeSelf: `
                                                                            def get_prime_numbers():
@@ -1111,7 +1111,7 @@ if __name__ == "__main__":
     time.sleep(1)
     print(f"Простые числа найдены и записаны в {prime_file}")
       `
-    },
+  },
   {
     codeName: "get_factorial_of_each_number",
     codeSelf: `
