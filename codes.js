@@ -1003,5 +1003,69 @@ order = {
 
 print(get_order_total_sum(order, "KZ")) # --> 3360.0
     `
+  },
+  {
+    codeName: "Handler (Pattern project)":
+    codeSelf:
+    `
+                                 from abc import ABC, abstractmethod
+
+
+class Handler(ABC):
+    @abstractmethod
+    def handle_request(self, request):
+        pass
+
+                                                                      from handler import Handler
+
+
+class Cleaner(Handler):
+    def handle_request(self, request):
+        if "Clean" in request:
+            print("The cleaner is working")
+        else:
+            print("Cleaner out of work")
+            super().handle_request(request)
+
+
+class Programmer(Handler):
+    def handle_request(self, request):
+        if "Code" in request:
+            print("Programmer writes code")
+        else:
+            print("Programmer out of work")
+            super().handle_request(request)
+
+
+class Builder(Handler):
+    def handle_request(self, request):
+        if "Build" in request:
+            print("Builder is building")
+        else:
+            print("Builder out of work")
+            super().handle_request(request)
+
+
+class Chain:
+    def __init__(self):
+        self.handlers = []
+
+    def add_handler(self, handler):
+        self.handlers.append(handler)
+
+    def handle_request(self, request):
+        for handler in self.handlers:
+            handler.handle_request(request)
+
+
+if __name__ == "__main__":
+    chain = Chain()
+    chain.add_handler(Cleaner())
+    chain.add_handler(Programmer())
+    chain.add_handler(Builder())
+
+    requests = ["Code", "list", "Build"]
+    chain.handle_request(requests)
+    `
   }
  ]
